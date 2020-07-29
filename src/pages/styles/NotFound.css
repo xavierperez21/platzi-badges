@@ -1,0 +1,41 @@
+.main_container {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    background: url('../../images/stars.svg'), #1B1B25;
+    background-repeat: repeat;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title_error {
+    margin-top: 150px;
+}
+.img_error {
+    margin-top: -150px;
+    height: 80vh;
+}
+
+@media screen and (max-width: 768px) {
+    .title_error {
+        margin-top: 120px;
+        font-size: 2rem;
+    }
+    .img_error {
+        margin-top: -120px;
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .title_error {
+        margin-top: 100px;
+        font-size: 1.8rem;
+    }
+    .img_error {
+        margin-top: -100px;
+        height: 50vh;
+    }
+}
