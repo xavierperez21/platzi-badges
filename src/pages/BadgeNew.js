@@ -1,18 +1,20 @@
 import React from 'react';
 
 import './styles/BadgeNew.css';
-import logo_header from '../images/badge-header.svg'
+import logo_header from '../images/platziconf-logo.svg'
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 
 class BadgeNew extends React.Component {
-    state = { form: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        jobTitle: '',
-        twitter: '',
-    } };
+    state = {
+        form: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            jobTitle: '',
+            twitter: '',
+        }
+    };
 
     handleChange = event => {
         this.setState({
@@ -27,7 +29,10 @@ class BadgeNew extends React.Component {
         return (
             <React.Fragment>
                 <div className="BadgeNew__hero">
-                    <img className="img-fluid" src={logo_header} alt="Logo"/>
+                    <img
+                        className="img-fluid BadgeNew__hero-image"
+                        src={logo_header}
+                        alt="Logo"/>
                 </div>
 
                 <div className="container">

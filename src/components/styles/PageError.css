@@ -1,0 +1,12 @@
+.PageError {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+}
+
+.PageError__img {
+    height: calc(100vh - 60px);
+}
