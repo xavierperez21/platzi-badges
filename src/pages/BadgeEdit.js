@@ -1,15 +1,15 @@
 import React from 'react';
 
-import './styles/BadgeNew.css';
+import './styles/BadgeEdit.css';
 import logo_header from '../images/platziconf-logo.svg'
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 import api from '../api';
 import PageLoading from '../components/PageLoading';
 
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
     state = {
-        loading: false,
+        loading: true,
         error: null,
         form: {
             firstName: '',
@@ -17,6 +17,22 @@ class BadgeNew extends React.Component {
             email: '',
             jobTitle: '',
             twitter: '',
+        }
+    };
+
+    componentDidMount() {
+        this.fetchData();
+    }
+
+    fetchData = async (event) => {
+        this.setState({ loading: true, error: null })
+        try {
+            const data = await api.badges.read(this.props.match.params.badgeId); // React-router helps us acceding to the URL of the components thanks to the <Route/> component. We can access through the prop 'match' that is an object who has the property 'params' and then params are the params of the URL where it is 'badgeId'.
+
+            this.setState({ loading: false, form: data })
+        }
+        catch (error) {
+            this.setState({ loading: false, error: error });
         }
     };
 
@@ -35,7 +51,7 @@ class BadgeNew extends React.Component {
         // After React renders again all the components passes to the next line, like here will pass to the try block.
 
         try {
-            await api.badges.create(this.state.form);
+            await api.badges.update(this.props.match.params.badgeId, this.state.form);
             this.setState({ loading: false });
 
             // Every component inside a <Switch /> has a property named history. This is thanks to react-router-dom
@@ -54,9 +70,9 @@ class BadgeNew extends React.Component {
 
         return (
             <React.Fragment>
-                <div className="BadgeNew__hero">
+                <div className="BadgeEdit__hero">
                     <img
-                        className="img-fluid BadgeNew__hero-image"
+                        className="img-fluid BadgeEdit__hero-image"
                         src={logo_header}
                         alt="Logo"/>
                 </div>
@@ -74,7 +90,7 @@ class BadgeNew extends React.Component {
                         </div>
 
                         <div className="col-6">
-                            <h1>New Attendant</h1>
+                            <h1>Edit Attendant</h1>
                             <BadgeForm
                                 onChange={this.handleChange}
                                 formValues={this.state.form}
@@ -89,4 +105,4 @@ class BadgeNew extends React.Component {
     }
 }
 
-export default BadgeNew;
+export default BadgeEdit;
