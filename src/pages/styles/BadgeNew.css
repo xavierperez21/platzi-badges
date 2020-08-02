@@ -13,3 +13,26 @@
 .BadgeNew__hero-image {
     max-height: 100px;
 }
+
+.row-details {
+    padding-bottom: 15px;
+}
+
+@media screen and (max-width: 770px) {
+    .row-details {
+        display: block;
+    }
+
+    .container__buttons {
+        display: flex;
+    }
+    .col-form {
+        margin-top: 40px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-badge {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

@@ -46,3 +46,16 @@
     font-weight: bold;
     font-style: italic;
 }
+
+@media screen and (max-width: 1000px) {
+    .Badge__section-name h1 {
+        font-size: 1.6rem;
+    }
+    .Badge__avatar {
+        width: 100px;
+        height: 100px;
+    }
+    .Badge__section-info h3 {
+        font-size: 1.4rem;
+    }
+}

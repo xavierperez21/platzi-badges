@@ -18,3 +18,37 @@
     justify-content: flex-end;
     margin-bottom: 1rem;
 }
+
+.confLogo {
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .confLogo-img {
+        height: 125px;
+    }
+
+    .BadgeDetails__hero-attendant-name h1 {
+        font-size: 2.1rem;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .row-details {
+        display: block;
+    }
+
+    .container__buttons {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .BadgeDetails__hero-attendant-name {
+        display: none;
+    }
+    .confLogo {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}

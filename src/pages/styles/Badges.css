@@ -14,7 +14,7 @@
 
 .Badges__container {
     width: 100%;
-    max-width: 580px;
+    /* max-width: 580px; */
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -24,7 +24,7 @@
 
 .Badges__buttons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin-bottom: 1rem;
 }
 /* 

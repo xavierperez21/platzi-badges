@@ -34,6 +34,8 @@ class BadgeForm extends React.Component {
                             type="text"
                             name="firstName"
                             value={this.props.formValues.firstName}
+                            required="required"
+                            placeholder="Insert your first name"
                         />
                     </div>
 
@@ -45,6 +47,8 @@ class BadgeForm extends React.Component {
                             type="text"
                             name="lastName"
                             value={this.props.formValues.lastName}
+                            required="required"
+                            placeholder="Insert your last name"
                         />
                     </div>
 
@@ -56,6 +60,8 @@ class BadgeForm extends React.Component {
                             type="email"
                             name="email"
                             value={this.props.formValues.email}
+                            required="required"
+                            placeholder="Insert your email"
                         />
                     </div>
 
@@ -67,6 +73,8 @@ class BadgeForm extends React.Component {
                             type="text"
                             name="jobTitle"
                             value={this.props.formValues.jobTitle}
+                            required="required"
+                            placeholder="Insert your job title"
                         />
                     </div>
 
@@ -79,6 +87,8 @@ class BadgeForm extends React.Component {
                             type="text"
                             name="twitter"
                             value={this.props.formValues.twitter}
+                            required="required"
+                            placeholder="Insert your twitter"
                         />
                     </div>
 

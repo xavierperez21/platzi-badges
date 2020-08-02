@@ -1,3 +1,8 @@
+.BadgesList {
+    display: flex;
+    flex-direction: column;
+}
+
 .BadgesList ul>li {
     margin-bottom: 1rem;
 }
@@ -25,4 +30,20 @@
 
 .twitter_user {
     color: rgb(51, 182, 199);
+}
+.form-group {
+    width: 70%;
+    align-self: center;
+}
+.list-unstyled {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 500px);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 550px) {
+    .list-unstyled {
+        display: block;
+    }
 }

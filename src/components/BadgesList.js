@@ -48,7 +48,9 @@ function useSearchBadges(badges) {
 function BadgesList (props) {
     const badges = props.badges;
 
-    const [ query, setQuery, filteredBadges ] = useSearchBadges(badges);
+    const [ query, setQuery, filteredBadges ] = useSearchBadges(badges)
+
+    const reverseBadges = [...filteredBadges].reverse();
 
     if (filteredBadges.length === 0) {
         return (
@@ -82,7 +84,7 @@ function BadgesList (props) {
                 />
             </div>
             <ul className="list-unstyled">
-                {filteredBadges.map(badge => {
+                {reverseBadges.map(badge => {
                     return (
                         <li key={badge.id}>
                             <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}`}>
