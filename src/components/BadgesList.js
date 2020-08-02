@@ -76,7 +76,10 @@ function BadgesList (props) {
         <div className="BadgesList">
             <div className="form-group">
                 <label>Filter Badges</label>
-                <input type="text" className="form-control"
+                <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search a badge..."
                     value={query}
                     onChange={(event) => {
                         setQuery(event.target.value);
