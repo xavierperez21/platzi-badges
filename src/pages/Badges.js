@@ -8,6 +8,7 @@ import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
 
 import api from '../api';
+import MiniLoader from '../components/MiniLoader';
 
 class Badges extends React.Component {
     state = {
@@ -18,7 +19,14 @@ class Badges extends React.Component {
 
     componentDidMount () {  //Best place to make request because all the code of our components is ready to use.
         this.fetchData()
+
+        // Apṕlying polling
+        // this.intervalId = setInterval(this.fetchData, 5000);
     }
+
+    // componentWillUnmount() {
+    //     clearInterval(this.intervalId);
+    // }
 
     fetchData = async () => {
         this.setState({ loading: true, error: null });  // We initialize again the values of login and error in case that fetchData() is called again
@@ -33,7 +41,7 @@ class Badges extends React.Component {
     }
 
     render() {
-        if (this.state.loading === true) {
+        if (this.state.loading === true && !this.state.data) {
             return <PageLoading />;
         }
 
@@ -59,6 +67,7 @@ class Badges extends React.Component {
                     </div>
 
                     <div className="Badges__container">
+                        {/* {this.state.loading && <MiniLoader/>} */}
                         <BadgesList badges={this.state.data} />
                     </div>
                 </div>

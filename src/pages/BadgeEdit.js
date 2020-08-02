@@ -6,6 +6,7 @@ import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 import api from '../api';
 import PageLoading from '../components/PageLoading';
+import NotFound from './NotFound';
 
 class BadgeEdit extends React.Component {
     state = {
@@ -28,7 +29,6 @@ class BadgeEdit extends React.Component {
         this.setState({ loading: true, error: null })
         try {
             const data = await api.badges.read(this.props.match.params.badgeId); // React-router helps us acceding to the URL of the components thanks to the <Route/> component. We can access through the prop 'match' that is an object who has the property 'params' and then params are the params of the URL where it is 'badgeId'.
-
             this.setState({ loading: false, form: data })
         }
         catch (error) {
@@ -66,6 +66,10 @@ class BadgeEdit extends React.Component {
     render() {
         if (this.state.loading) {
             return <PageLoading />;
+        }
+
+        if (this.state.error) {
+            return <NotFound />
         }
 
         return (
