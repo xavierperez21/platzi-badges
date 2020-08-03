@@ -16,10 +16,10 @@ In this platform you can also list all the attendants and filter them by name.
   <img src="./src/images/readme_img/badges_list.png" width="600" title="badges list">
 </p>
 <p align="center">
-  <img src="./src/images/readme_img/badges_new.png" width="600" title="badge new">
+  <img src="./src/images/readme_img/badge_new.png" width="600" title="badge new">
 </p>
 <p align="center">
-  <img src="./src/images/readme_img/badges_edit.png" width="600" title="badge edit">
+  <img src="./src/images/readme_img/badge_edit.png" width="600" title="badge edit">
 </p>
 
 ## Things Learned
