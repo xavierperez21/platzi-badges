@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Platzi-badges/precache-manifest.0f0e05842be5d608ef1b437157be2ebd.js"
+  "/Platzi-badges/precache-manifest.d6439f5034a286fcf1d47542e57ceceb.js"
 );
 
 workbox.clientsClaim();
